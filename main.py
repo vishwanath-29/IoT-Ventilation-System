@@ -3,8 +3,7 @@ import board
 import adafruit_dht
 
 # Initial the dht device, with data pin connected to:
-dhtDevice = adafruit_dht.DHT11(board.D4)
-
+dhtDevice = adafruit_dht.DHT11(board.D3,use_pulseio=False)
 while True:
     try:
         temperature_c = dhtDevice.temperature
