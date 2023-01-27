@@ -8,7 +8,7 @@ from azure.iot.device import IoTHubDeviceClient, Message
 
 CONNECTION_STRING = "HostName=Iot-Ventilation-System.azure-devices.net;DeviceId=Raspberry-pi-3;SharedAccessKey=fAG59knKTbgIZmd1ydlhoV6Z1KsDsTKs5rrF/0d42AQ="  
 
-MSG_SND = '{{"temperature": {temperature},"humidity": {humidity}}}'  
+MSG_SND = '{{"temperature": {temperature},"humidity": {humidity} ,"moisture": {moisture} ,"nutrient": {nutrient} ,"pH": {pH}}}'  
 
 while True:
     
@@ -23,11 +23,14 @@ while True:
                 try:
                     temperature=random.randint(30,45)
                     humidity=random.randint(40,85)
+                    moisture=random.randint(40,85)
+                    pH=random.randint(3,12)
+                    nutrient=random.randint(30,50)
                     #temperature = dhtDevice.temperature
                     #humidity = dhtDevice.humidity 
                 except RuntimeError:
                     print("Error")
-                msg_txt_formatted = MSG_SND.format(temperature=temperature, humidity=humidity)  
+                msg_txt_formatted = MSG_SND.format(temperature=temperature, humidity=humidity,moisture=moisture,pH=pH,nutrient=nutrient)  
                 message = Message(msg_txt_formatted)  
                 print( "Sending message: {}".format(message) )  
                 client.send_message(message)  
