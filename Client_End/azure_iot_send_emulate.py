@@ -6,8 +6,8 @@ import time
 from azure.iot.device import IoTHubDeviceClient, Message  
 # dhtDevice = adafruit_dht.DHT11(board.D3,use_pulseio=False)
 
-CONNECTION_STRING = "HostName=Iot-Ventilation-System.azure-devices.net;DeviceId=Raspberry-pi-3;SharedAccessKey=fAG59knKTbgIZmd1ydlhoV6Z1KsDsTKs5rrF/0d42AQ="  
-
+#CONNECTION_STRING = "HostName=Iot-Ventilation-System.azure-devices.net;DeviceId=rapberry-pi-3;SharedAccessKey=HostName=CropFailureDetection.azure-devices.net;DeviceId=rapberry-pi-3;SharedAccessKey=5ls1Y7dFWlPdi2qgnbU1z+zLyhWVedpAIbzsQLvqhlU="  
+CONNECTION_STRING = "HostName=sensordata.azure-devices.net;DeviceId=rapberry-pi-3;SharedAccessKey=HostName=CropFailureDetection.azure-devices.net;DeviceId=rapberry-pi-3;SharedAccessKey=5ls1Y7dFWlPdi2qgnbU1z+zLyhWVedpAIbzsQLvqhlU="  
 MSG_SND = '{{"temperature": {temperature},"humidity": {humidity}}}'  
 
 while True:
